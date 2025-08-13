@@ -1,173 +1,200 @@
-# SBTS Security Website
+# SBTS Security - Enterprise Cybersecurity Website
 
-A sophisticated cybersecurity services website built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui components.
+A sophisticated, professional cybersecurity services website built with Next.js 15, featuring human-centric design, interactive chatbot, and comprehensive client intake forms.
 
-## Features
+## 🌟 Features
 
-- **Modern Design**: Professional cybersecurity website with Accenture/IBM-style aesthetics
-- **Responsive Layout**: Mobile-first design that works on all devices
-- **Interactive Components**: 
-  - Multi-step client intake form
-  - Floating chatbot with quick prompts
-  - Smooth scrolling navigation
-- **Human-Centric Imagery**: Professional team photos and industry-specific visuals
-- **Comprehensive Services**: Managed SOC, DevSecOps, Compliance, Staffing, Cyber Insurance, White-Label SOC
-- **Docker Support**: Containerized deployment with nginx reverse proxy
+### **Professional Design**
+- **Human-Centric Imagery**: Professional team photos and industry-specific imagery throughout
+- **Modern UI/UX**: Clean, professional design similar to Accenture/IBM/LevelBlue
+- **Responsive Design**: Fully responsive across all devices
+- **Professional Color Scheme**: Blues, purples, and professional gradients
 
-## Tech Stack
+### **Interactive Components**
+- **AI Chatbot**: Intelligent chatbot with quick prompts and responses
+- **Multi-step Client Intake Form**: Comprehensive lead capture form
+- **Contact Forms**: Professional contact forms with validation
+- **Resource Downloads**: Cybersecurity guides and templates
 
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Components**: shadcn/ui
-- **Icons**: Lucide React
-- **Deployment**: Docker & Docker Compose
+### **Complete Service Portfolio**
+- **Managed SOC & MDR/XDR**: 24/7 security operations
+- **DevSecOps & AppSec**: Application security and CI/CD integration
+- **Compliance & GRC**: ISO 27001, SOC 2, HIPAA, PCI DSS, GDPR
+- **Security Staffing**: Co-managed SOC and flexible staffing
+- **Cyber Insurance Advisory**: Policy guidance and readiness assessments
+- **White-Label SOC**: Partner program for MSPs/MSSPs
 
-## Quick Start
+### **Technical Stack**
+- **Next.js 15**: Latest React framework with App Router
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: Professional UI components
+- **Docker**: Containerized deployment
+- **Nginx**: Reverse proxy for production
 
-### Development
+## 🚀 Quick Start
 
-```bash
-# Install dependencies
-npm install
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Docker (optional)
 
-# Run development server
-npm run dev
+### Installation
 
-# Open http://localhost:3000
-```
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd sbts-security
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
 
 ### Docker Deployment
 
-```bash
-# Build and run with Docker Compose
-docker-compose up --build
+1. **Build and run with Docker Compose**
+   ```bash
+   docker-compose up -d
+   ```
 
-# Access the website at http://localhost:3001
-# Access nginx proxy at http://localhost:8080 (production profile)
-```
+2. **Access the application**
+   ```
+   http://localhost:3001 (Next.js app)
+   http://localhost:8080 (Nginx proxy)
+   ```
 
-### Production with Nginx
-
-```bash
-# Run with nginx reverse proxy
-docker-compose --profile production up --build
-
-# Access via nginx at http://localhost:8080
-```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 sbts-security/
 ├── src/
 │   ├── app/
-│   │   ├── api/health/          # Health check endpoint
+│   │   ├── api/                 # API routes
+│   │   │   ├── contact/         # Contact form handler
+│   │   │   ├── intake/          # Client intake handler
+│   │   │   └── health/          # Health check
 │   │   ├── globals.css          # Global styles
 │   │   ├── layout.tsx           # Root layout
 │   │   └── page.tsx             # Homepage
-│   └── components/
-│       ├── ui/                  # shadcn/ui components
-│       ├── Chatbot.tsx          # Floating chatbot
-│       ├── ClientIntakeForm.tsx # Multi-step form
-│       └── Navigation.tsx       # Navigation component
-├── Dockerfile                   # Multi-stage Docker build
-├── docker-compose.yml          # Container orchestration
-├── nginx.conf                  # Nginx configuration
-└── next.config.ts              # Next.js configuration
+│   ├── components/
+│   │   ├── ui/                  # shadcn/ui components
+│   │   ├── Chatbot.tsx          # AI chatbot component
+│   │   ├── ClientIntakeForm.tsx # Multi-step intake form
+│   │   ├── ContactForm.tsx      # Contact form component
+│   │   └── Navigation.tsx       # Navigation component
+│   └── lib/                     # Utility functions
+├── public/                      # Static assets
+├── docker-compose.yml           # Docker configuration
+├── Dockerfile                   # Docker build file
+├── nginx.conf                   # Nginx configuration
+└── package.json                 # Dependencies
 ```
 
-## Services Offered
+## 🎨 Design Features
 
-1. **Managed SOC & MDR/XDR**
-   - 24/7/365 monitoring and response
-   - Endpoint, network, identity, and cloud telemetry
-   - Playbook-driven containment
+### **Human-Centric Imagery**
+- Professional team photos in hero section
+- Industry-specific imagery for each service
+- Team member profiles with expertise
+- Professional headshots throughout
 
-2. **DevSecOps & Application Security**
-   - Secure SDLC integration
-   - SAST/DAST/IAST scanning
-   - Container and Kubernetes security
+### **Professional Branding**
+- SBTS Group integration
+- U.S.-headquartered positioning
+- Global delivery footprint
+- 25+ years of experience emphasis
 
-3. **Compliance & GRC**
-   - ISO 27001, SOC 2, HIPAA, PCI DSS
-   - GDPR, CMMC, NIST frameworks
-   - Continuous controls monitoring
+### **Interactive Elements**
+- Hover effects and animations
+- Professional color transitions
+- Responsive image galleries
+- Modern card layouts
 
-4. **Security Staffing**
-   - Tier 1-3 analyst staffing
-   - Co-managed SOC operations
-   - Flexible engagement models
+## 🔧 Configuration
 
-5. **Cyber Insurance Advisory**
-   - Pre-policy readiness assessments
-   - Control gap analysis
-   - Premium optimization
+### Environment Variables
+Create a `.env.local` file:
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_COMPANY_NAME=SBTS Security
+NEXT_PUBLIC_CONTACT_EMAIL=elewis@sbtsgroup.com
+NEXT_PUBLIC_CONTACT_PHONE=+1-571-276-2203
+```
 
-6. **White-Label SOC**
-   - Branded dashboards and reporting
-   - Multi-tenant isolation
-   - Partner success support
+### API Integration
+The website includes API routes for:
+- Contact form submissions (`/api/contact`)
+- Client intake form (`/api/intake`)
+- Health checks (`/api/health`)
 
-## Industries Served
+### CRM Integration
+To integrate with your CRM (HubSpot, Salesforce, etc.):
+1. Update the API routes in `src/app/api/`
+2. Add your CRM API credentials
+3. Implement lead creation and email notifications
 
-- Financial Services & Banking
-- Healthcare & Life Sciences
-- Manufacturing & Industrial
-- Technology & SaaS
-- Government & Public Sector
-- Energy & Utilities
-- Retail & E-commerce
-- Education
+## 📱 Responsive Design
 
-## Contact Information
+The website is fully responsive with:
+- **Mobile-first approach**
+- **Tablet optimization**
+- **Desktop enhancement**
+- **Touch-friendly interactions**
 
-- **Phone**: +1-571-276-2203
-- **Email**: elewis@sbtsgroup.com
-- **Address**: SBTS Group LLC, 329 K St SE, Washington, DC 20003
+## 🚀 Deployment
 
-## Docker Ports
-
-- **Website**: http://localhost:3001
-- **Nginx Proxy**: http://localhost:8080 (production profile)
-- **Health Check**: http://localhost:3001/api/health
-
-## Environment Variables
-
-- `NODE_ENV`: Production/development environment
-- `NEXT_TELEMETRY_DISABLED`: Disable Next.js telemetry
-- `PORT`: Application port (default: 3000)
-
-## Development Commands
-
+### Production Build
 ```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
 npm run build
-
-# Start production server
 npm start
-
-# Run linting
-npm run lint
-
-# Type checking
-npm run type-check
 ```
 
-## Deployment Notes
+### Docker Production
+```bash
+docker-compose -f docker-compose.yml --profile production up -d
+```
 
-- The application uses Next.js standalone output for optimized Docker builds
-- Nginx reverse proxy provides additional security headers and compression
-- Health checks ensure container reliability
-- Multi-stage Docker build minimizes image size
+### Environment-Specific Configs
+- **Development**: `npm run dev`
+- **Production**: `npm run build && npm start`
+- **Docker**: `docker-compose up -d`
 
-## Contributing
+## 🔒 Security Features
+
+- **Input validation** on all forms
+- **CSRF protection** (Next.js built-in)
+- **XSS prevention** (React built-in)
+- **Secure headers** (Next.js config)
+- **Environment variable protection**
+
+## 📊 Analytics & SEO
+
+### SEO Optimization
+- Meta tags for all pages
+- Open Graph tags
+- Twitter Card support
+- Structured data markup
+- Sitemap generation
+
+### Performance
+- **Image optimization** with Next.js
+- **Code splitting** and lazy loading
+- **CDN-ready** static assets
+- **Caching strategies**
+
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -175,6 +202,40 @@ npm run type-check
 4. Test thoroughly
 5. Submit a pull request
 
-## License
+## 📄 License
 
-© SBTS Group LLC. All rights reserved.
+This project is proprietary to SBTS Group LLC.
+
+## 📞 Support
+
+For technical support or questions:
+- **Email**: elewis@sbtsgroup.com
+- **Phone**: +1-571-276-2203
+- **Website**: sbtssecurity.com
+
+## 🎯 Roadmap
+
+### Phase 1 (Current)
+- ✅ Professional website with human imagery
+- ✅ Interactive chatbot
+- ✅ Client intake forms
+- ✅ Contact forms
+- ✅ Responsive design
+
+### Phase 2 (Planned)
+- [ ] Blog/Content management system
+- [ ] Case studies and testimonials
+- [ ] Advanced chatbot with AI integration
+- [ ] Multi-language support
+- [ ] Advanced analytics dashboard
+
+### Phase 3 (Future)
+- [ ] Customer portal
+- [ ] Service management interface
+- [ ] Partner portal for white-label services
+- [ ] Advanced reporting tools
+- [ ] Mobile app integration
+
+---
+
+**Built with ❤️ by SBTS Security Team**
