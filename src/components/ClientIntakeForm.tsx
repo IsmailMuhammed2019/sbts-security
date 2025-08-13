@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { CheckCircle, ChevronRight, ChevronLeft, Building2, Users, Shield, Globe } from "lucide-react";
 import { toast } from "sonner";
 
@@ -136,7 +135,7 @@ export default function ClientIntakeForm() {
 
   const totalSteps = 4;
 
-  const updateFormData = (field: keyof FormData, value: any) => {
+  const updateFormData = (field: keyof FormData, value: string | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -169,7 +168,7 @@ export default function ClientIntakeForm() {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      toast.success("Thank you! We'll be in touch within 24 hours.");
+      toast.success("Thank you! We&apos;ll be in touch within 24 hours.");
       
       // Reset form
       setFormData({
@@ -225,7 +224,7 @@ export default function ClientIntakeForm() {
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold">Get Your Free Security Assessment</CardTitle>
           <CardDescription>
-            Tell us about your organization and security needs. We'll provide a customized assessment and recommendations.
+            Tell us about your organization and security needs. We&apos;ll provide a customized assessment and recommendations.
           </CardDescription>
         </CardHeader>
         
@@ -506,10 +505,10 @@ export default function ClientIntakeForm() {
               <div className="bg-blue-50 p-4 rounded-lg">
                 <h4 className="font-medium text-blue-900 mb-2">What happens next?</h4>
                 <ul className="text-sm text-blue-800 space-y-1">
-                  <li>• We'll review your information within 24 hours</li>
+                  <li>• We&apos;ll review your information within 24 hours</li>
                   <li>• A security expert will contact you to discuss your needs</li>
-                  <li>• You'll receive a customized security assessment report</li>
-                  <li>• We'll provide recommendations and pricing options</li>
+                  <li>• You&apos;ll receive a customized security assessment report</li>
+                  <li>• We&apos;ll provide recommendations and pricing options</li>
                 </ul>
               </div>
             </div>

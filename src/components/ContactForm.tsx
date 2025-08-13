@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, Building2, MessageSquare } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
 
 interface ContactFormData {
@@ -84,7 +84,7 @@ export default function ContactForm() {
       <CardHeader className="text-center">
         <CardTitle className="text-2xl font-bold">Get in Touch</CardTitle>
         <CardDescription>
-          Ready to secure your business? Let's discuss your cybersecurity needs.
+          Ready to secure your business? Let&apos;s discuss your cybersecurity needs.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -174,7 +174,7 @@ export default function ContactForm() {
           </Button>
 
           <div className="text-center text-sm text-slate-600">
-            <p>We'll respond within 24 hours</p>
+                            <p>We&apos;ll respond within 24 hours</p>
             <div className="flex justify-center space-x-6 mt-4">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />

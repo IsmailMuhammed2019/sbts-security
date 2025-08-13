@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Globe, Zap, Target, Lock, Eye, Brain, Code, FileText, Building2, GraduationCap, Handshake, TrendingUp, Award, Clock, CheckCircle, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Shield, Users, Globe, Zap, Eye, Code, FileText, Handshake, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Chatbot from "@/components/Chatbot";
 
@@ -120,7 +119,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Comprehensive Security Services</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              From managed SOC operations to DevSecOps, compliance, staffing, and cyber insurance—we're your one-stop security partner.
+              From managed SOC operations to DevSecOps, compliance, staffing, and cyber insurance—we&apos;re your one-stop security partner.
             </p>
           </div>
           
