@@ -45,7 +45,7 @@ export default function Home() {
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
                   Get Free Security Assessment
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
+                <Button size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-slate-900">
                   Book SOC Demo
                 </Button>
               </div>
@@ -318,7 +318,7 @@ export default function Home() {
             <div className="text-center">
               <div className="relative mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                   alt="Chief Security Officer" 
                   className="w-32 h-32 rounded-full object-cover mx-auto shadow-lg"
                 />
