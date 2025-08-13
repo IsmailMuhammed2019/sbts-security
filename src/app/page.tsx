@@ -518,7 +518,7 @@ export default function Home() {
             <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-slate-100">
               Get Started Today
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+            <Button size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">
               Schedule Consultation
             </Button>
           </div>
@@ -554,7 +554,7 @@ export default function Home() {
             <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
               Get Free Assessment
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+            <Button size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">
               Schedule Demo
             </Button>
           </div>
