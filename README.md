@@ -1,36 +1,180 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SBTS Security Website
 
-## Getting Started
+A sophisticated cybersecurity services website built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui components.
 
-First, run the development server:
+## Features
+
+- **Modern Design**: Professional cybersecurity website with Accenture/IBM-style aesthetics
+- **Responsive Layout**: Mobile-first design that works on all devices
+- **Interactive Components**: 
+  - Multi-step client intake form
+  - Floating chatbot with quick prompts
+  - Smooth scrolling navigation
+- **Human-Centric Imagery**: Professional team photos and industry-specific visuals
+- **Comprehensive Services**: Managed SOC, DevSecOps, Compliance, Staffing, Cyber Insurance, White-Label SOC
+- **Docker Support**: Containerized deployment with nginx reverse proxy
+
+## Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Deployment**: Docker & Docker Compose
+
+## Quick Start
+
+### Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Docker Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Build and run with Docker Compose
+docker-compose up --build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Access the website at http://localhost:3001
+# Access nginx proxy at http://localhost:8080 (production profile)
+```
 
-## Learn More
+### Production with Nginx
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Run with nginx reverse proxy
+docker-compose --profile production up --build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Access via nginx at http://localhost:8080
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+sbts-security/
+├── src/
+│   ├── app/
+│   │   ├── api/health/          # Health check endpoint
+│   │   ├── globals.css          # Global styles
+│   │   ├── layout.tsx           # Root layout
+│   │   └── page.tsx             # Homepage
+│   └── components/
+│       ├── ui/                  # shadcn/ui components
+│       ├── Chatbot.tsx          # Floating chatbot
+│       ├── ClientIntakeForm.tsx # Multi-step form
+│       └── Navigation.tsx       # Navigation component
+├── Dockerfile                   # Multi-stage Docker build
+├── docker-compose.yml          # Container orchestration
+├── nginx.conf                  # Nginx configuration
+└── next.config.ts              # Next.js configuration
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Services Offered
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Managed SOC & MDR/XDR**
+   - 24/7/365 monitoring and response
+   - Endpoint, network, identity, and cloud telemetry
+   - Playbook-driven containment
+
+2. **DevSecOps & Application Security**
+   - Secure SDLC integration
+   - SAST/DAST/IAST scanning
+   - Container and Kubernetes security
+
+3. **Compliance & GRC**
+   - ISO 27001, SOC 2, HIPAA, PCI DSS
+   - GDPR, CMMC, NIST frameworks
+   - Continuous controls monitoring
+
+4. **Security Staffing**
+   - Tier 1-3 analyst staffing
+   - Co-managed SOC operations
+   - Flexible engagement models
+
+5. **Cyber Insurance Advisory**
+   - Pre-policy readiness assessments
+   - Control gap analysis
+   - Premium optimization
+
+6. **White-Label SOC**
+   - Branded dashboards and reporting
+   - Multi-tenant isolation
+   - Partner success support
+
+## Industries Served
+
+- Financial Services & Banking
+- Healthcare & Life Sciences
+- Manufacturing & Industrial
+- Technology & SaaS
+- Government & Public Sector
+- Energy & Utilities
+- Retail & E-commerce
+- Education
+
+## Contact Information
+
+- **Phone**: +1-571-276-2203
+- **Email**: elewis@sbtsgroup.com
+- **Address**: SBTS Group LLC, 329 K St SE, Washington, DC 20003
+
+## Docker Ports
+
+- **Website**: http://localhost:3001
+- **Nginx Proxy**: http://localhost:8080 (production profile)
+- **Health Check**: http://localhost:3001/api/health
+
+## Environment Variables
+
+- `NODE_ENV`: Production/development environment
+- `NEXT_TELEMETRY_DISABLED`: Disable Next.js telemetry
+- `PORT`: Application port (default: 3000)
+
+## Development Commands
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+
+# Type checking
+npm run type-check
+```
+
+## Deployment Notes
+
+- The application uses Next.js standalone output for optimized Docker builds
+- Nginx reverse proxy provides additional security headers and compression
+- Health checks ensure container reliability
+- Multi-stage Docker build minimizes image size
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+© SBTS Group LLC. All rights reserved.

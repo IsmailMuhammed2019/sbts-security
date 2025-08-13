@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  sbts-security:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sbts-security-website
+    ports:
+      - "3001:3000"  # Using port 3001 to avoid conflict with existing containers
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - sbts-network
+
+  # Optional: Add a reverse proxy with nginx for production
+  nginx:
+    image: nginx:alpine
+    container_name: sbts-security-nginx
+    ports:
+      - "8080:80"  # Using port 8080 for nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - sbts-security
+    restart: unless-stopped
+    networks:
+      - sbts-network
+    profiles:
+      - production
+
+networks:
+  sbts-network:
+    driver: bridge
+
